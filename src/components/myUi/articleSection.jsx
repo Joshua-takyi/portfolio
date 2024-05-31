@@ -96,7 +96,7 @@ export default function Article() {
 					</div>
 				</div>
 				<div className="lg:w-1/2">
-					<Image src="/server.gif" width={700} height={500} alt="gif" />
+					<Image src="/server.jpg" width={700} height={500} alt="server" />
 				</div>
 			</section>
 		</>
