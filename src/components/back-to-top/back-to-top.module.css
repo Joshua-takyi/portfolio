@@ -1,0 +1,44 @@
+.parent {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 50;
+
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+
+  color: var(--text-color);
+  background: red;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+
+  /* hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* .parent:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+} */
+
+.parent:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}

@@ -1,0 +1,22 @@
+.footer {
+  padding-block-start: 2rem;
+  padding-block-end: 3rem;
+}
+.holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    cursor: pointer;
+    /* transition: all 300ms ease; */
+  }
+}
+
+.year {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}

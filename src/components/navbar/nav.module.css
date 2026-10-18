@@ -1,0 +1,163 @@
+.header {
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------- Brand ---------- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: var(--text-color);
+  }
+}
+
+/* ---------- Shared ---------- */
+
+.index {
+  color: var(--text-color);
+  transition: color 200ms linear;
+}
+
+/* ---------- Desktop nav ---------- */
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  a {
+    padding: 0.5rem 0;
+
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--secondary-color);
+  }
+
+  &:hover .index {
+    color: var(--secondary-color);
+  }
+}
+
+/* ---------- Mobile menu button ---------- */
+
+.menuButton {
+  display: none;
+  height: 40px;
+  border: none;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+
+  @media (max-width: 800px) {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ---------- Mobile overlay ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+  /* background-color: var(--secondary-color); */
+  animation: slideFromRight 300ms ease-out;
+}
+
+.overlayHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.closeButton {
+  height: 40px;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    animation: none;
+  }
+}
+
+.closing {
+  animation: slideToRight 300ms ease-in forwards;
+}
+
+@keyframes slideToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

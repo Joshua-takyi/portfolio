@@ -1,0 +1,15 @@
+.project {
+  padding-block: 4rem;
+  @media (max-width: 768px) {
+    padding-block: 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

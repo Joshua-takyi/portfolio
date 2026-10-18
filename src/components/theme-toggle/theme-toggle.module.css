@@ -1,0 +1,53 @@
+.toggle {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden; /* clips the icons while they slide */
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  /* border: 1px solid var(--border); */
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.toggle:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  /* initial / inactive position */
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* no animation on first paint, only on user clicks */
+.ready .icon {
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ready .icon {
+    transition: none;
+  }
+}

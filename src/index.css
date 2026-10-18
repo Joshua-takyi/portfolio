@@ -1,0 +1,77 @@
+:root {
+  --background-color: #140152;
+  --text-color: #fff;
+  --text-muted: #8b9bb0;
+  --border-radius: 8px;
+  --secondary-color: #70da98;
+  --fs-h1: clamp(1.5rem, 5vw, 3rem);
+  --fs-p: 1.2rem;
+  --fs-index: clamp(1rem, 5vw, 1.2rem);
+  --fs-header: clamp(1.5rem, 5vw, 2rem);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background-color: #fff;
+  --text-color: #0a0a0a;
+  --text-muted: #555;
+  --secondary-color: #1a8f4d;
+  /* darker green so it's readable on white */
+  --surface: rgba(0, 0, 0, 0.03);
+  --border: rgba(0, 0, 0, 0.12);
+}
+
+/* geist-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/assets/geist-mono-v6-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/assets/inter-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "GeistIMono", monospace;
+  background: var(--background-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+.container {
+  width: min(100% - 2rem, 80rem);
+  margin: 0 auto;
+}
+
+p {
+  color: var(--text-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

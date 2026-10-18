@@ -1,0 +1,87 @@
+.section {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.intro {
+  margin: 0 0 1.75rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 40ch;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.row {
+  display: grid;
+  /* bracket | name | bar | percent */
+  grid-template-columns: auto 9rem 1fr 3rem;
+  align-items: center;
+  column-gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.bracket {
+  color: var(--text-muted);
+}
+
+.name {
+  color: var(--text-color);
+}
+
+.track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--text-muted);
+  border-radius: inherit;
+  transform-origin: left;
+  animation: grow 0.8s ease-out both;
+}
+
+.percent {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    animation: none;
+  }
+}
+
+/* on small screens, put the bar on its own line under the name */
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: auto 1fr auto;
+    row-gap: 0.4rem;
+  }
+  .track {
+    grid-column: 1 / -1;
+    order: 4;
+  }
+}
