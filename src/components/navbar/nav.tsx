@@ -1,8 +1,7 @@
+import { MenuIcon, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router";
 import styles from "./nav.module.css";
-import { MenuIcon, X } from "lucide-react";
-import ThemeToggle from "../theme-toggle/theme-toggle";
 
 const navLinks: { title: string; to: string }[] = [
   { title: "Home", to: "/" },
