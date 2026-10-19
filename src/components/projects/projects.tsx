@@ -6,7 +6,7 @@ import styles from "./projects.module.css";
 const projects: cardProps[] = [
   {
     framework: "React • Go", // adjust to your actual frontend
-    img: "images/madscent.png", // see note below
+    img: "images/madscent.webp", // see note below
     header: "UY Studio",
     to: "https://crazyscent.vercel.app/", // or the live URL
     description:
@@ -15,7 +15,7 @@ const projects: cardProps[] = [
   },
   {
     framework: "Astro • Vercel",
-    img: "images/onpoint.png",
+    img: "images/onpoint.webp",
     header: "Onpoint Painting",
     to: "https://onpointpainting.vercel.app",
     description:
@@ -24,7 +24,7 @@ const projects: cardProps[] = [
   },
   {
     framework: "Astro • Vercel",
-    img: "images/voice-notes.png",
+    img: "images/voice-notes.webp",
     header: "Voice Notes Clone",
     to: "https://voice-clone-mocha.vercel.app",
     description:

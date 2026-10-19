@@ -6,6 +6,7 @@ import Hero from "../components/hero/hero";
 import Nav from "../components/navbar/nav";
 import Projects from "../components/projects/projects";
 import Stack from "../components/stack/stack";
+import { WhatsAppButton } from "../components/whatsapp/whatsapp";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <GetInTouch />
       <Footer />
       <BackToTop />
+      <WhatsAppButton />
     </main>
   );
 }
