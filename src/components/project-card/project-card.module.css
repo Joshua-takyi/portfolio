@@ -6,7 +6,7 @@
   padding: 1rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(120, 170, 200, 0.25);
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   font-family: "JetBrains Mono", ui-monospace, monospace;
   color: #e6edf3;
   transition:
